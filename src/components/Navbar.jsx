@@ -1,30 +1,52 @@
 import { Link } from "react-router-dom";
 
-function Navbar() {
+import { useState, useRef, useEffect } from "react";
+import "./Navbar.css";
+
+function Navbar({ toggleSidebar }) {
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <nav className="bg-slate-800 text-white px-6 py-4 flex gap-6">
-      <Link
-        to="/"
-        className="hover:text-yellow-300 font-medium"
-      >
-        Home
-      </Link>
+    <nav className="top-navbar">
+      <button className="hamburger" onClick={toggleSidebar}>
+        ☰
+      </button>
+      <div className="logo">HealthCare+</div>
 
-      <Link
-        to="/auth"
-        className="hover:text-yellow-300 font-medium"
-      >
-        Auth
-      </Link>
+      <div className="search-engine">
+        <input className="search-input" type="text" placeholder="Search..." />
+        <i className="fa-solid fa-magnifying-glass"/>
+      </div>
 
-      <Link
-        to="/dashboard"
-        className="hover:text-yellow-300 font-medium"
-      >
-        Dashboard
-      </Link>
+      <div className="nav-right">
+        <i className="fa-regular fa-bell"/>
+        <div className="dropdown" ref={dropdownRef}>
+          <i className="fa-solid fa-circle-user" onClick={() => setOpen(!open) } />
+          {open && (
+            <div className="dropdown-menu">
+              <p>My Profile</p>
+              <p>Settings</p>
+              <p>Help</p>
+              <hr />
+              <p className="logout">Logout</p>
+            </div>
+          )}
+        </div>
+      </div>
     </nav>
   );
 }
 
 export default Navbar;
+
