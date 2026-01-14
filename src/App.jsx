@@ -4,6 +4,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import BMI from "./pages/BMI";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="auth" element={<Auth />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="bmi" element={<BMI />} />
       </Route>
     </Routes>
   );

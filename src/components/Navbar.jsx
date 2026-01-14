@@ -23,6 +23,10 @@ function Navbar() {
       >
         Dashboard
       </Link>
+      <Link to="/bmi"
+       className="hover:text-yellow-300 font-medium">
+        BMI Calculator
+      </Link>
     </nav>
   );
 }
