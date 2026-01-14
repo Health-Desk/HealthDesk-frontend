@@ -1,11 +1,14 @@
-import Navbar from "./Navbar";
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Layout() {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   return (
     <>
-      <Navbar />
-      <Outlet />
+      <Navbar toggleSidebar={() => setSidebarOpen(prev => !prev)} />
+      <Outlet context={{ sidebarOpen }} />
     </>
   );
 }

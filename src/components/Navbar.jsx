@@ -19,10 +19,11 @@ function Navbar({ toggleSidebar }) {
 
   return (
     <nav className="top-navbar">
-      <button className="hamburger" onClick={toggleSidebar}>
-        ☰
-      </button>
+      <div className="nav-left">
+      <button className="hamburger" onClick={toggleSidebar}> ☰ </button>
+
       <div className="logo">HealthCare+</div>
+      </div>
 
       <div className="search-engine">
         <input className="search-input" type="text" placeholder="Search..." />
