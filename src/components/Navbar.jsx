@@ -18,19 +18,28 @@ function Navbar({ toggleSidebar }) {
 
   return (
     <nav className="top-navbar">
-      <button className="hamburger" onClick={toggleSidebar}>
-        ☰
-      </button>
+      {/* LEFT */}
+      <div className="nav-left">
+        <button className="hamburger" onClick={toggleSidebar}>
+          ☰
+        </button>
 
-      <div className="logo">
-        <Link to="/">HealthCare+</Link>
+        <div className="logo">
+          <Link to="/">HealthCare+</Link>
+        </div>
       </div>
 
+      {/* CENTER */}
       <div className="search-engine">
-        <input className="search-input" type="text" placeholder="Search..." />
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search..."
+        />
         <i className="fa-solid fa-magnifying-glass" />
       </div>
 
+      {/* RIGHT */}
       <div className="nav-right">
         <Link to="/bmi" className="nav-link">
           BMI Calculator
@@ -41,7 +50,7 @@ function Navbar({ toggleSidebar }) {
         <div className="dropdown" ref={dropdownRef}>
           <i
             className="fa-solid fa-circle-user"
-            onClick={() => setOpen(!open)}
+            onClick={() => setOpen(prev => !prev)}
           />
           {open && (
             <div className="dropdown-menu">

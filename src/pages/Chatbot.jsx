@@ -1,56 +1,32 @@
-import "./App.css";
+import React from "react";
+import "./Chatbot.css";
 
-export default function App() {
+const Chatbot = () => {
   return (
-    <div className="app">
-
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="nav-left">
-          <img src="/logo.png" alt="Logo" className="logo" />
-          <h2>AI Health Chatbot</h2>
+    <div className="page">
+      <div className="box">
+        <div className="title">
+          Hi I am your AI Health Assistant. How can I help you?
         </div>
-      </nav>
 
-      {/* Main layout */}
-      <div className="main">
+        <div className="input-container">
+          <input
+            type="text"
+            className="textbox"
+            placeholder="Ask Anything you want to ..."
+          />
 
-        {/* Chat History */}
-        <aside className="history">
-          <h3>Previous Chats</h3>
-          <ul>
-            <li>Chat with Doctor</li>
-            <li>Health Tips</li>
-            <li>Diet Query</li>
-          </ul>
-        </aside>
+          <label htmlFor="fileInput" className="file-upload-btn">
+            +
+          </label>
 
-        {/* Chat Section */}
-        <section className="chat-container">
+          <input type="file" id="fileInput" />
 
-          <div className="chat-body">
-            <div className="message bot">
-              Hello! How can I help you today?
-            </div>
-          </div>
-
-          {/* Input + Upload */}
-          <div className="chat-footer">
-            <label className="upload-btn">
-              📎
-              <input type="file" hidden />
-            </label>
-
-            <input
-              type="text"
-              placeholder="Type your message..."
-            />
-
-            <button>Send</button>
-          </div>
-
-        </section>
+          <button className="send-btn">➤</button>
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default Chatbot;
