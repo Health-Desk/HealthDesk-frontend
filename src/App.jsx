@@ -6,6 +6,8 @@ import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
 import BMI from "./pages/BMI";
 import Chatbot from "./pages/Chatbot";
+import Index from "./pages/index.jsx";
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="bmi" element={<BMI />} />
         <Route path="chatbot" element={<Chatbot/>} />
+        <Route path="profile" element={<Index />} />
+
       </Route>
     </Routes>
   );
