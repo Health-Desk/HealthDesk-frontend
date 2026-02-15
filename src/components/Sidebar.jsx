@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import "./Sidebar.css";
 
 function Sidebar({ isOpen }) {
   const [active, setActive] = useState("");
@@ -17,50 +16,108 @@ function Sidebar({ isOpen }) {
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const baseItem =
+    "flex items-center gap-3 px-3 py-2 mb-2 rounded-md cursor-pointer text-sm transition-all duration-200";
+
+  const activeItem = "bg-[#276578] text-white";
+  const inactiveItem = "text-gray-700 hover:bg-[#daedfb]";
+
   return (
     <aside
       ref={sidebarRef}
-      className={`sidebar ${isOpen ? "open" : "closed"}`}
+      className={`
+        ${isOpen ? "w-[240px]" : "w-[70px]"}
+        bg-[#f5f7fa]
+        px-4 py-5
+        border-r border-gray-300
+        h-[calc(100vh-60px)]
+        transition-all duration-300
+      `}
     >
-      {isOpen && <h3 className="sidebar-title">Records</h3>}
+      {/* Records */}
+      {isOpen && (
+        <h3 className="text-xs font-semibold text-gray-500 uppercase mt-5 mb-3">
+          Records
+        </h3>
+      )}
 
-      <ul className="sidebar-menu">
-        <li className={active === "saved" ? "active" : ""}>
-          <i className="fa-solid fa-bookmark"></i>
-          {isOpen && <span>Saved Prescriptions</span>}
+      <ul>
+        <li
+          onClick={() => setActive("saved")}
+          className={`${baseItem} ${
+            active === "saved" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-solid fa-bookmark text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Saved Prescriptions</span>}
         </li>
 
-        <li className={active === "consults" ? "active" : ""}>
-          <i className="fa-solid fa-stethoscope"></i>
-          {isOpen && <span>Past Consultations</span>}
+        <li
+          onClick={() => setActive("consults")}
+          className={`${baseItem} ${
+            active === "consults" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-solid fa-stethoscope text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Past Consultations</span>}
         </li>
       </ul>
 
-      {isOpen && <h3 className="sidebar-title">Billing</h3>}
+      {/* Billing */}
+      {isOpen && (
+        <h3 className="text-xs font-semibold text-gray-500 uppercase mt-6 mb-3">
+          Billing
+        </h3>
+      )}
 
-      <ul className="sidebar-menu">
-        <li className={active === "payments" ? "active" : ""}>
-          <i className="fa-solid fa-money-bill"></i>
-          {isOpen && <span>Payments</span>}
+      <ul>
+        <li
+          onClick={() => setActive("payments")}
+          className={`${baseItem} ${
+            active === "payments" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-solid fa-money-bill text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Payments</span>}
         </li>
 
-        <li className={active === "invoices" ? "active" : ""}>
-          <i className="fa-regular fa-file"></i>
-          {isOpen && <span>Invoices</span>}
+        <li
+          onClick={() => setActive("invoices")}
+          className={`${baseItem} ${
+            active === "invoices" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-regular fa-file text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Invoices</span>}
         </li>
       </ul>
 
-      {isOpen && <h3 className="sidebar-title">Support</h3>}
+      {/* Support */}
+      {isOpen && (
+        <h3 className="text-xs font-semibold text-gray-500 uppercase mt-6 mb-3">
+          Support
+        </h3>
+      )}
 
-      <ul className="sidebar-menu">
-        <li className={active === "emergency" ? "active" : ""}>
-          <i className="fa-solid fa-phone"></i>
-          {isOpen && <span>Emergency</span>}
+      <ul>
+        <li
+          onClick={() => setActive("emergency")}
+          className={`${baseItem} ${
+            active === "emergency" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-solid fa-phone text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Emergency</span>}
         </li>
 
-        <li className={active === "help" ? "active" : ""}>
-          <i className="fa-solid fa-circle-info"></i>
-          {isOpen && <span>Help</span>}
+        <li
+          onClick={() => setActive("help")}
+          className={`${baseItem} ${
+            active === "help" ? activeItem : inactiveItem
+          } ${!isOpen ? "justify-center" : ""}`}
+        >
+          <i className="fa-solid fa-circle-info text-lg min-w-[24px] text-[#183e49]"></i>
+          {isOpen && <span className="whitespace-nowrap">Help</span>}
         </li>
       </ul>
     </aside>
