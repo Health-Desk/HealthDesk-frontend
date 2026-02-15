@@ -7,7 +7,7 @@ function Layout() {
 
   return (
     <>
-      <Navbar toggleSidebar={() => setSidebarOpen(prev => !prev)} />
+      <Navbar toggleSidebar={() => setSidebarOpen(prev => !prev)} isSidebarOpen={sidebarOpen} />
       <Outlet context={{ sidebarOpen }} />
     </>
   );

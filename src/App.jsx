@@ -8,6 +8,7 @@ import BMI from "./pages/BMI";
 import Chatbot from "./pages/Chatbot";
 import Index from "./pages/index.jsx";
 
+import Diet from "./pages/Diet";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="chatbot" element={<Chatbot/>} />
         <Route path="profile" element={<Index />} />
 
+        <Route path="dietPlan" element={<Diet/>}/>
       </Route>
     </Routes>
   );
