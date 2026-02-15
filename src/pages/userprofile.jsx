@@ -5,7 +5,7 @@ import AddressInfoCard from "../components/profile/AddressInfoCard";
 
 const patientData = {
   id: "PT-2024-0892",
-  name: "Sarah Johnson",
+  name: "Iman Datta",
   dateOfBirth: "March 15, 1985",
   age: 38,
   gender: "Female",
