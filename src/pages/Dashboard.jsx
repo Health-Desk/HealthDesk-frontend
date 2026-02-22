@@ -38,7 +38,7 @@ function Dashboard() {
             icon="fa-solid fa-calendar-plus"
             title="Book Health Services"
             desc="Schedule doctor appointments or book lab tests"
-            onClick={() => navigate("/dashboard/book-services")}
+            onClick={() => navigate("/book-services")}
           />
 
           <FeatureCard
