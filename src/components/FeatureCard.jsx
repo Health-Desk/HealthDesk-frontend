@@ -9,9 +9,7 @@ function FeatureCard({ icon, title, desc, onClick }) {
         p-5
         pb-24
         cursor-pointer
-        border
-        border-[#276578]
-        bg-gradient-to-br
+        bg-gray-100
         from-[#f0fafc]
         to-[#f1f7f8]
         transition-all

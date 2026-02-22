@@ -8,6 +8,7 @@ import BMI from "./pages/BMI";
 import Chatbot from "./pages/Chatbot";
 import Diet from "./pages/Diet";
 import Profile from "./pages/UserProfile";
+import BookServices from "./pages/BookServices";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="chatbot" element={<Chatbot/>} />
         <Route path="dietPlan" element={<Diet/>}/>
         <Route path="profile" element={<Profile/>}/>
+        <Route path="dashboard/book-services" element={<BookServices/>}/>
       </Route>
     </Routes>
   );
