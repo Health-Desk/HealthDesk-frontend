@@ -21,7 +21,7 @@ function App() {
         <Route path="chatbot" element={<Chatbot/>} />
         <Route path="dietPlan" element={<Diet/>}/>
         <Route path="profile" element={<Profile/>}/>
-        <Route path="dashboard/book-services" element={<BookServices/>}/>
+        <Route path="book-services" element={<BookServices/>}/>
       </Route>
     </Routes>
   );
