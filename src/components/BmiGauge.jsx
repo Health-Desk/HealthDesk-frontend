@@ -35,7 +35,7 @@ const BmiGauge = ({ bmi, category, color }) => {
           strokeLinecap="round"
           strokeDasharray={semiCircumference}
           strokeDashoffset={strokeDashoffset}
-          className="transition-[stroke-dashoffset] duration-1000 ease-out transition-[stroke] duration-500"
+          // className="transition-[stroke-dashoffset] duration-1000 ease-out transition-[stroke] duration-500"
         />
       </svg>
       
