@@ -9,6 +9,7 @@ import Chatbot from "./pages/Chatbot";
 import Diet from "./pages/Diet";
 import Profile from "./pages/UserProfile";
 import BookServices from "./pages/BookServices";
+import MedicalReport from "./pages/MedicalReport";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="dietPlan" element={<Diet/>}/>
         <Route path="profile" element={<Profile/>}/>
         <Route path="book-services" element={<BookServices/>}/>
+        <Route path="medicalhistory" element={<MedicalReport/>}/>
       </Route>
     </Routes>
   );
