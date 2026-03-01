@@ -1,0 +1,41 @@
+.healthdesk-page {
+  min-height: 100vh;
+  background: #f4f6f8;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.healthdesk-header h1 {
+  font-size: 36px;
+  color: #138d75;
+  margin-bottom: 10px;
+}
+
+.healthdesk-header p {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.healthdesk-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 40px auto;
+  gap: 30px;
+}
+
+.healthdesk-left {
+  flex: 1;
+}
+
+.healthdesk-right {
+  flex: 1;
+}
+
+.healthdesk-footer {
+  margin-top: 50px;
+  color: #888;
+  font-size: 14px;
+}

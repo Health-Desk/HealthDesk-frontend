@@ -1,0 +1,17 @@
+.drug-card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.drug-card h2 {
+  color: #138d75;
+  margin-bottom: 20px;
+}
+
+.drug-card p {
+  margin-bottom: 12px;
+  color: #333;
+}
