@@ -10,6 +10,7 @@ import Diet from "./pages/Diet";
 import Profile from "./pages/UserProfile";
 import BookServices from "./pages/BookServices";
 import MedicalReport from "./pages/MedicalReport";
+import DrugRecommendationIndex from "./pages/DrugRecommendationIndex";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="profile" element={<Profile/>}/>
         <Route path="book-services" element={<BookServices/>}/>
         <Route path="medicalhistory" element={<MedicalReport/>}/>
+         <Route path="drug-index" element={<DrugRecommendationIndex />} />
       </Route>
     </Routes>
   );
