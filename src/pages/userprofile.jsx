@@ -28,7 +28,7 @@ const Profile = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <main className="max-w-6xl mx-auto px-8 py-12">
+      <main className="w-full px-6 py-12">
         <div className="grid grid-cols-12 gap-10">
 
           {/* LEFT COLUMN */}
