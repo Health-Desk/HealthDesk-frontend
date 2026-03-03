@@ -20,12 +20,12 @@ function App() {
         <Route path="auth" element={<Auth />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="bmi" element={<BMI />} />
-        <Route path="chatbot" element={<Chatbot/>} />
-        <Route path="dietPlan" element={<Diet/>}/>
-        <Route path="profile" element={<Profile/>}/>
-        <Route path="book-services" element={<BookServices/>}/>
-        <Route path="medicalhistory" element={<MedicalReport/>}/>
-         <Route path="drug-index" element={<DrugRecommendationIndex />} />
+        <Route path="chatbot" element={<Chatbot />} />
+        <Route path="dietPlan" element={<Diet />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="book-services" element={<BookServices />} />
+        <Route path="medicalhistory" element={<MedicalReport />} />
+        <Route path="drug-index" element={<DrugRecommendationIndex />} />
       </Route>
     </Routes>
   );
