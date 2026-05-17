@@ -2,6 +2,7 @@ import { useState } from "react";
 import CategorySelect from "./CategorySelect";
 import TestList from "./TestList";
 import DatePicker from "./DatePicker";
+import labTests from "../../data/labTests";
 
 function LabTest() {
   const today = new Date().toISOString().split("T")[0];
@@ -14,32 +15,13 @@ function LabTest() {
     "Vitamins",
   ];
 
-  const tests = [
-    {
-      id: 1,
-      name: "Complete Blood Count",
-      category: "Blood Tests",
-      price: 499,
-    },
-    { id: 2, name: "Lipid Profile", category: "Blood Tests", price: 699 },
-    { id: 3, name: "HbA1c", category: "Diabetes", price: 549 },
-    { id: 4, name: "Fasting Blood Sugar", category: "Diabetes", price: 299 },
-    {
-      id: 5,
-      name: "Thyroid Panel (T3, T4, TSH)",
-      category: "Thyroid",
-      price: 799,
-    },
-    { id: 6, name: "Liver Function Test", category: "Liver", price: 599 },
-    { id: 7, name: "Vitamin D", category: "Vitamins", price: 899 },
-  ];
 
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedTest, setSelectedTest] = useState(null);
   const [preferredDate, setPreferredDate] = useState("");
   const [homeCollection, setHomeCollection] = useState(false);
 
-  const filteredTests = tests.filter(
+  const filteredTests = labTests.filter(
     (test) => test.category === selectedCategory,
   );
 
@@ -71,7 +53,7 @@ Time will be assigned by the lab as per their convenience.`,
 
         {/* Test Selection */}
         <TestList
-          tests={selectedCategory ? filteredTests : tests}
+          tests={selectedCategory ? filteredTests : labTests}
           selectedTest={selectedTest}
           setSelectedTest={(test) => {
             setSelectedTest(test);

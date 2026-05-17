@@ -44,7 +44,6 @@ function DoctorList({
               <div className="flex items-center gap-1 mt-2">
                 <Star
                   size={16}
-                  className="fill-yellow-400 text-yellow-400"
                 />
 
                 <span className="text-sm font-medium">
