@@ -57,7 +57,7 @@ Time will be assigned by the lab as per their convenience.`,
 
   return (
     <div className="space-y-6">
-      <div className="p-6 border rounded-xl bg-white shadow-sm">
+      <div className="p-6 border rounded-xl bg-white shadow-sm space-y-6">
         {/* Category */}
         <CategorySelect
           categories={categories}
@@ -70,56 +70,48 @@ Time will be assigned by the lab as per their convenience.`,
         />
 
         {/* Test Selection */}
-        {selectedCategory && (
-          <TestList
-            tests={filteredTests}
-            selectedTest={selectedTest}
-            setSelectedTest={(test) => {
-              setSelectedTest(test);
-              setPreferredDate("");
-            }}
-          />
-        )}
+        <TestList
+          tests={selectedCategory ? filteredTests : tests}
+          selectedTest={selectedTest}
+          setSelectedTest={(test) => {
+            setSelectedTest(test);
+            setPreferredDate("");
+          }}
+        />
 
         {/* Preferred Date */}
-        {selectedTest && (
-          <DatePicker
-            today={today}
-            selectedDate={preferredDate}
-            setSelectedDate={setPreferredDate}
-            label="Preferred Date"
-          />
-        )}
+        <DatePicker
+          today={today}
+          selectedDate={preferredDate}
+          setSelectedDate={setPreferredDate}
+          label="Preferred Date"
+        />
 
         {/* Home Sample Collection Toggle */}
-        {selectedTest && (
-          <div className="flex items-center justify-between mb-6">
-            <span className="font-medium">Home Sample Collection</span>
+        <div className="flex items-center justify-between mb-2">
+          <span className="font-medium">Home Sample Collection</span>
 
-            <button
-              onClick={() => setHomeCollection(!homeCollection)}
-              className={`w-14 h-7 flex items-center rounded-full p-1 transition ${
-                homeCollection ? "bg-[#276578]" : "bg-gray-300"
+          <button
+            onClick={() => setHomeCollection(!homeCollection)}
+            className={`w-14 h-7 flex items-center rounded-full p-1 transition ${
+              homeCollection ? "bg-[#276578]" : "bg-gray-300"
+            }`}
+          >
+            <div
+              className={`bg-white w-5 h-5 rounded-full shadow-md transform transition ${
+                homeCollection ? "translate-x-7" : ""
               }`}
-            >
-              <div
-                className={`bg-white w-5 h-5 rounded-full shadow-md transform transition ${
-                  homeCollection ? "translate-x-7" : ""
-                }`}
-              />
-            </button>
-          </div>
-        )}
+            />
+          </button>
+        </div>
 
         {/* Confirm Button */}
-        {selectedTest && preferredDate && (
-          <button
-            onClick={handleSubmit}
-            className="bg-[#276578] text-white px-6 py-2 rounded-md hover:bg-[#1e4d5c] transition w-full"
-          >
-            Confirm Lab Booking
-          </button>
-        )}
+        <button
+          onClick={handleSubmit}
+          className="bg-[#276578] text-white px-6 py-2 rounded-md hover:bg-[#1e4d5c] transition w-full"
+        >
+          Confirm Lab Booking
+        </button>
       </div>
     </div>
   );
