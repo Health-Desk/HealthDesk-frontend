@@ -1,9 +1,9 @@
+import { useState } from "react";                                   // ✅ FIX 1: added
 import PatientProfileCard from "../components/profile/PatientProfileCard";
 import PersonalInfoCard from "../components/profile/PersonalInfoCard";
 import AddressInfoCard from "../components/profile/AddressInfoCard";
 
-
-const patientData = {
+const initialPatientData = {                                         // ✅ FIX 2: renamed
   id: "PT-2024-0892",
   name: "Iman Datta",
   dateOfBirth: "March 15, 1985",
@@ -22,8 +22,10 @@ const patientData = {
 };
 
 const Profile = () => {
-  const handleEdit = () => {
-    console.log("Edit profile clicked");
+  const [patient, setPatient] = useState(initialPatientData);
+
+  const handlePhotoUpdate = (newPhotoUrl) => {
+    setPatient((prev) => ({ ...prev, photoUrl: newPhotoUrl }));
   };
 
   return (
@@ -41,7 +43,7 @@ const Profile = () => {
               </p>
 
               <h1 className="text-3xl font-semibold text-gray-900 leading-tight">
-                Hi <span className="text-blue-600">{patientData.name.split(" ")[0]}</span>!
+                Hi <span className="text-blue-600">{patient.name.split(" ")[0]}</span>!  {/* ✅ FIX 3: patientData → patient */}
               </h1>
 
               <p className="text-gray-500">
@@ -51,15 +53,15 @@ const Profile = () => {
 
             {/* Patient Card */}
             <PatientProfileCard
-              patient={patientData}
-              onEdit={handleEdit}
+              patient={patient}                                      
+              onEdit={handlePhotoUpdate}                             
             />
           </div>
 
           {/* RIGHT COLUMN */}
           <div className="col-span-8 space-y-6">
-            <PersonalInfoCard patient={patientData} />
-            <AddressInfoCard address={patientData.address} />
+            <PersonalInfoCard patient={patient} />                   
+            <AddressInfoCard address={patient.address} />            
           </div>
 
         </div>
